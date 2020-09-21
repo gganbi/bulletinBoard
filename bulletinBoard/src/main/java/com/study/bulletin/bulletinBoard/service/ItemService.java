@@ -2,7 +2,7 @@ package com.study.bulletin.bulletinBoard.service;
 
 import com.study.bulletin.bulletinBoard.domain.item.Item;
 import com.study.bulletin.bulletinBoard.repository.ItemRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,10 +12,7 @@ import java.util.List;
  * User: HolyEyE
  * Date: 2013. 12. 3. Time: 오후 9:43
  */
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -38,7 +35,7 @@ public class ItemService {
 
     public Item findOne(Long itemId) {
 
-        return itemRepository.findOne(itemId);
+        return itemRepository.findById(itemId).orElse(null);
 
     }
 }

@@ -1,13 +1,16 @@
 package com.study.bulletin.bulletinBoard.repository;
 
 import com.study.bulletin.bulletinBoard.domain.Order;
-import com.study.bulletin.bulletinBoard.domain.OrderSearch;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
 
+
+@Repository
+public interface OrderRepository extends JpaRepository<Order, Long> {
+}
+
+/*
 @Repository
 public class OrderRepository {
 
@@ -28,3 +31,4 @@ public class OrderRepository {
         return null;
     }
 }
+*/

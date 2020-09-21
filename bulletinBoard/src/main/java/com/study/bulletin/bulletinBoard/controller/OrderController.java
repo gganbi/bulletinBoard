@@ -1,9 +1,7 @@
 package com.study.bulletin.bulletinBoard.controller;
 
 import com.study.bulletin.bulletinBoard.domain.Member;
-import com.study.bulletin.bulletinBoard.domain.Order;
 import com.study.bulletin.bulletinBoard.domain.item.Item;
-import com.study.bulletin.bulletinBoard.domain.OrderSearch;
 import com.study.bulletin.bulletinBoard.service.ItemService;
 import com.study.bulletin.bulletinBoard.service.MemberService;
 import com.study.bulletin.bulletinBoard.service.OrderService;
@@ -43,7 +41,7 @@ public class OrderController {
         orderService.order(memberId, itemId, count);
         return "redirect:/orders";
     }
-
+/*  이거 검색기능 쿼리ds적용
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     public String orderList(@ModelAttribute("orderSearch") OrderSearch orderSearch, Model model) {
 
@@ -52,7 +50,7 @@ public class OrderController {
 
         return "order/orderList";
     }
-
+*/
     @RequestMapping(value = "/orders/{orderId}/cancel")
     public String processCancelBuy(@PathVariable("orderId") Long orderId) {
 
